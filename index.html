@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Map-rotation by mkenyon</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Map-rotation</h1>
+        <p>Builds a new map rotation file for hl2-based games.</p>
+        <p class="view"><a href="https://github.com/mkenyon/map-rotation">View the Project on GitHub <small>mkenyon/map-rotation</small></a></p>
+        <ul>
+          <li><a href="https://github.com/mkenyon/map-rotation/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mkenyon/map-rotation/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mkenyon/map-rotation">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>MapRotation</h1>
+
+<p>Builds a new map rotation file for hl2-based games</p>
+
+<h2>Installation</h2>
+
+<pre><code>gem install map-rotation
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Usage: <code>map-rotation</code> [options]</p>
+
+<p>The possible options are:</p>
+
+<pre><code>-v, --verbose    print the maplist to STDOUT as well as to file
+--dump-config    print out current configuration and exit
+</code></pre>
+
+<h2>Configuration</h2>
+
+<p>To start building a configuration fie, run <code>map-rotation --dump-config &gt;
+map-rotation.yaml</code> and edit it. The config file is a YAML file that specifies
+the tiers of maps and how many maps to select from each tier. It also has a
+few configuration options for map-rotation itself, but those are all specified
+when you dump the config.</p>
+
+<p>A sample config:</p>
+
+<pre><code>---
+- tiers:
+  - choose: 2
+    maps:
+      - pl_goldrush
+      - cp_dustbowl
+      - pl_badwater
+  - choose: 1
+    maps:
+    - tc_hydro
+    - plr_hightower
+- verbose: true
+- targetFile: /path/to/desired/mapcycle.txt
+</code></pre>
+
+<p>This will make a map list with three maps: two from the first tier and
+one from the second. The <code>verbose</code> key will make map-rotation print out
+the map list to STDOUT in addition to writing it to a file.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/mkenyon">mkenyon</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
